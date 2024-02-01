@@ -32,7 +32,7 @@ If you found this library useful in your research, please consider citing:
 ```
 @article{zhang2024uvsam,
   title={UV-SAM: Adapting Segment Anything Model for Urban Village Identification},
-  author={Zhang, Xin and Liu, Yu  and Lin, Yuming and Liao, Qinming and Li, Yong},
+  author={Zhang, Xin and Liu, Yu  and Lin, Yuming and Liao, Qingmin and Li, Yong},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   year={2024}
 }
