@@ -16,6 +16,7 @@ Here we provide the dataset of Beijing and Xi'an for reproducibility, and the im
 ## Training & Testing
 
 The code is tested under a Linux desktop with torch 2.0.1 and Python 3.10. All experiments are conducted on a single NVIDIA GeForce RTX4090 with 24GB memory.
+
 **Training:**
 
 For the Beijing results, we can implement the model by running the following command:
@@ -80,8 +81,16 @@ If you are using the provided datasets/codes or find this work helpful for your 
 ```
 @article{zhang2024uvsam,
   title={UV-SAM: Adapting Segment Anything Model for Urban Village Identification},
-  author={Xin, Zhang and Liu, Yu  and Lin, Yuming and Liao, Qinming and Li, Yong},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  year={2024}
+  volume={38},
+  url={https://ojs.aaai.org/index.php/AAAI/article/view/30260},
+  DOI={10.1609/aaai.v38i20.30260},
+  number={20},
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+  author={Zhang, Xin and Liu, Yu and Lin, Yuming and Liao, Qingmin and Li, Yong},
+  year={2024},
+  month={Mar.},
+  pages={22520-22528}
 }
 ```
+
+@article{Zhang_Liu_Lin_Liao_Li_2024, title={UV-SAM: Adapting Segment Anything Model for Urban Village Identification}, volume={38}, url={https://ojs.aaai.org/index.php/AAAI/article/view/30260}, DOI={10.1609/aaai.v38i20.30260}, , number={20}, journal={Proceedings of the AAAI Conference on Artificial Intelligence}, author={Zhang, Xin and Liu, Yu and Lin, Yuming and Liao, Qingmin and Li, Yong}, year={2024}, month={Mar.}, pages={22520-22528} }
