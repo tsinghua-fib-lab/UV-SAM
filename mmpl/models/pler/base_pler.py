@@ -152,7 +152,7 @@ class BasePLer(pl.LightningModule, BaseModel):
         if self.local_rank == 0:
             print('查看优化器参数')
             for param_group in optimizer.param_groups:
-                print([value.shape for value in param_group['params']], '学习率: ', param_group['lr'])
+                print([value.shape for value in param_group['params']], '学习率: ', param_group['lr'],'wd:',param_group['weight_decay'])
 
         schedulers = copy.deepcopy(self.hyperparameters.get('param_scheduler', None))
         if schedulers is None:

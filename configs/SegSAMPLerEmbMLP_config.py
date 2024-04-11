@@ -129,9 +129,8 @@ logger = dict(
     type='WandbLogger',
     project="UV-SAM",
     group='SAM',
-    name=exp_name
+    save_dir=f'results/{exp_name}/logs',
 )
-
 
 
 
@@ -161,7 +160,7 @@ trainer_cfg = dict(
     logger=logger,
     callbacks=callbacks,
     log_every_n_steps=20,
-    check_val_every_n_epoch=5,
+    check_val_every_n_epoch=1,
 )
 
 

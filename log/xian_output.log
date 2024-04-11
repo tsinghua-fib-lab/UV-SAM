@@ -1,0 +1,3073 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmseg/models/backbones/mit.py:365: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmseg/models/decode_heads/decode_head.py:120: UserWarning: For binary segmentation, we suggest using`out_channels = 1` to define the outputchannels of segmentor, and use `threshold`to convert `seg_logits` into a predictionapplying a threshold
+  warnings.warn('For binary segmentation, we suggest using'
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmseg/models/builder.py:36: UserWarning: ``build_loss`` would be deprecated soon, please use ``mmseg.registry.MODELS.build()``
+  warnings.warn('``build_loss`` would be deprecated soon, please use '
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmseg/models/losses/cross_entropy_loss.py:236: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  warnings.warn(
+Loaded SAM model from /data2/zhangxin/urban_village/code/segment_anything/weights/sam_vit_l_0b3195.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m - load model from: /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m - Loads checkpoint by local backend from path: /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [33m[4m[5mWARNING[39m[24m[25m - The model and loaded state dict do not match exactly
+size mismatch for layers.3.2.bias: copying a param with shape torch.Size([]) from checkpoint, the shape in current model is torch.Size([256]).
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.0.projection.weight - torch.Size([32, 3, 7, 7]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.0.projection.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.0.norm.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.0.norm.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.norm1.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.norm1.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.attn.in_proj_weight - torch.Size([96, 32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.attn.in_proj_bias - torch.Size([96]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.attn.out_proj.weight - torch.Size([32, 32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.attn.out_proj.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.sr.weight - torch.Size([32, 32, 8, 8]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.sr.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.norm.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.attn.norm.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.norm2.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.norm2.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.0.weight - torch.Size([128, 32, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.0.bias - torch.Size([128]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.1.weight - torch.Size([128, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.1.bias - torch.Size([128]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.4.weight - torch.Size([32, 128, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.0.ffn.layers.4.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.norm1.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.norm1.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.attn.in_proj_weight - torch.Size([96, 32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.attn.in_proj_bias - torch.Size([96]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.attn.out_proj.weight - torch.Size([32, 32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.attn.out_proj.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.sr.weight - torch.Size([32, 32, 8, 8]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.sr.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.norm.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.attn.norm.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.norm2.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.norm2.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.0.weight - torch.Size([128, 32, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.0.bias - torch.Size([128]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.1.weight - torch.Size([128, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.1.bias - torch.Size([128]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.4.weight - torch.Size([32, 128, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.1.1.ffn.layers.4.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.2.weight - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.0.2.bias - torch.Size([32]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.0.projection.weight - torch.Size([64, 32, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.0.projection.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.0.norm.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.0.norm.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.norm1.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.norm1.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.attn.in_proj_weight - torch.Size([192, 64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.attn.in_proj_bias - torch.Size([192]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.attn.out_proj.weight - torch.Size([64, 64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.attn.out_proj.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.sr.weight - torch.Size([64, 64, 4, 4]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.sr.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.norm.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.attn.norm.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.norm2.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.norm2.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.0.weight - torch.Size([256, 64, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.0.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.1.weight - torch.Size([256, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.1.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.4.weight - torch.Size([64, 256, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.0.ffn.layers.4.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.norm1.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.norm1.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.attn.in_proj_weight - torch.Size([192, 64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.attn.in_proj_bias - torch.Size([192]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.attn.out_proj.weight - torch.Size([64, 64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.attn.out_proj.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.sr.weight - torch.Size([64, 64, 4, 4]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.sr.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.norm.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.attn.norm.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.norm2.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.norm2.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.0.weight - torch.Size([256, 64, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.0.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.1.weight - torch.Size([256, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.1.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.4.weight - torch.Size([64, 256, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.1.1.ffn.layers.4.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.2.weight - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.1.2.bias - torch.Size([64]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.0.projection.weight - torch.Size([160, 64, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.0.projection.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.0.norm.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.0.norm.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.norm1.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.norm1.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.attn.in_proj_weight - torch.Size([480, 160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.attn.in_proj_bias - torch.Size([480]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.attn.out_proj.weight - torch.Size([160, 160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.attn.out_proj.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.sr.weight - torch.Size([160, 160, 2, 2]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.sr.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.norm.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.attn.norm.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.norm2.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.norm2.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.0.weight - torch.Size([640, 160, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.0.bias - torch.Size([640]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.1.weight - torch.Size([640, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.1.bias - torch.Size([640]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.4.weight - torch.Size([160, 640, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.0.ffn.layers.4.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.norm1.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmseg/datasets/transforms/loading.py:80: UserWarning: `reduce_zero_label` will be deprecated, if you would like to ignore the zero label, please set `reduce_zero_label=True` when dataset initialized
+  warnings.warn('`reduce_zero_label` will be deprecated, '
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+Loading `train_dataloader` to estimate number of stepping batches.
+  | Name                 | Type                 | Params
+--------------------------------------------------------------
+0 | data_preprocessor    | SegDataPreProcessor  | 0
+1 | val_evaluator        | MetricCollection     | 0
+2 | backbone             | Sam                  | 312 M
+3 | seg_path_backbone    | MixVisionTransformer | 3.3 M
+4 | seg_path_decode_head | SegformerHead        | 395 K
+5 | avg_pool             | AdaptiveAvgPool2d    | 0
+6 | SAM_focal_loss       | FocalLoss            | 0
+7 | SAM_dice_loss        | DiceLoss             | 0
+8 | SAM_MSE_loss         | MSELoss              | 0
+--------------------------------------------------------------
+3.7 M     Trainable params
+312 M     Non-trainable params
+316 M     Total params
+1,264.229 Total estimated model params size (MB)
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.norm1.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.attn.in_proj_weight - torch.Size([480, 160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.attn.in_proj_bias - torch.Size([480]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.attn.out_proj.weight - torch.Size([160, 160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.attn.out_proj.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.sr.weight - torch.Size([160, 160, 2, 2]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.sr.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.norm.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.attn.norm.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.norm2.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.norm2.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.0.weight - torch.Size([640, 160, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.0.bias - torch.Size([640]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.1.weight - torch.Size([640, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.1.bias - torch.Size([640]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.4.weight - torch.Size([160, 640, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.1.1.ffn.layers.4.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.2.weight - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.2.2.bias - torch.Size([160]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.0.projection.weight - torch.Size([256, 160, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.0.projection.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.0.norm.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.0.norm.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.norm1.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.norm1.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.attn.attn.in_proj_weight - torch.Size([768, 256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.attn.attn.in_proj_bias - torch.Size([768]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.attn.attn.out_proj.weight - torch.Size([256, 256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.attn.attn.out_proj.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.norm2.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.norm2.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.0.weight - torch.Size([1024, 256, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.0.bias - torch.Size([1024]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.1.weight - torch.Size([1024, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.1.bias - torch.Size([1024]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.4.weight - torch.Size([256, 1024, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.0.ffn.layers.4.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.norm1.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.norm1.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.attn.attn.in_proj_weight - torch.Size([768, 256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.attn.attn.in_proj_bias - torch.Size([768]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.attn.attn.out_proj.weight - torch.Size([256, 256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.attn.attn.out_proj.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.norm2.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.norm2.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.0.weight - torch.Size([1024, 256, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.0.bias - torch.Size([1024]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.1.weight - torch.Size([1024, 1, 3, 3]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.1.bias - torch.Size([1024]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.4.weight - torch.Size([256, 1024, 1, 1]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.1.1.ffn.layers.4.bias - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.2.weight - torch.Size([256]):
+PretrainedInit: load from /data2/zhangxin/urban_village/AAAI2024/pre/mmseg_new.pth
+03/23 22:11:54 - mmengine - [97m[4mINFO[39m[24m -
+layers.3.2.bias - torch.Size([256]):
+The value is the same before and after calling `init_weights` of MixVisionTransformer
+seg_path_backbone.layers.0.0.projection.weight
+seg_path_backbone.layers.0.0.projection.bias
+seg_path_backbone.layers.0.0.norm.weight
+seg_path_backbone.layers.0.0.norm.bias
+seg_path_backbone.layers.0.1.0.norm1.weight
+seg_path_backbone.layers.0.1.0.norm1.bias
+seg_path_backbone.layers.0.1.0.attn.attn.in_proj_weight
+seg_path_backbone.layers.0.1.0.attn.attn.in_proj_bias
+seg_path_backbone.layers.0.1.0.attn.attn.out_proj.weight
+seg_path_backbone.layers.0.1.0.attn.attn.out_proj.bias
+seg_path_backbone.layers.0.1.0.attn.sr.weight
+seg_path_backbone.layers.0.1.0.attn.sr.bias
+seg_path_backbone.layers.0.1.0.attn.norm.weight
+seg_path_backbone.layers.0.1.0.attn.norm.bias
+seg_path_backbone.layers.0.1.0.norm2.weight
+seg_path_backbone.layers.0.1.0.norm2.bias
+seg_path_backbone.layers.0.1.0.ffn.layers.0.weight
+seg_path_backbone.layers.0.1.0.ffn.layers.0.bias
+seg_path_backbone.layers.0.1.0.ffn.layers.1.weight
+seg_path_backbone.layers.0.1.0.ffn.layers.1.bias
+seg_path_backbone.layers.0.1.0.ffn.layers.4.weight
+seg_path_backbone.layers.0.1.0.ffn.layers.4.bias
+seg_path_backbone.layers.0.1.1.norm1.weight
+seg_path_backbone.layers.0.1.1.norm1.bias
+seg_path_backbone.layers.0.1.1.attn.attn.in_proj_weight
+seg_path_backbone.layers.0.1.1.attn.attn.in_proj_bias
+seg_path_backbone.layers.0.1.1.attn.attn.out_proj.weight
+seg_path_backbone.layers.0.1.1.attn.attn.out_proj.bias
+seg_path_backbone.layers.0.1.1.attn.sr.weight
+seg_path_backbone.layers.0.1.1.attn.sr.bias
+seg_path_backbone.layers.0.1.1.attn.norm.weight
+seg_path_backbone.layers.0.1.1.attn.norm.bias
+seg_path_backbone.layers.0.1.1.norm2.weight
+seg_path_backbone.layers.0.1.1.norm2.bias
+seg_path_backbone.layers.0.1.1.ffn.layers.0.weight
+seg_path_backbone.layers.0.1.1.ffn.layers.0.bias
+seg_path_backbone.layers.0.1.1.ffn.layers.1.weight
+seg_path_backbone.layers.0.1.1.ffn.layers.1.bias
+seg_path_backbone.layers.0.1.1.ffn.layers.4.weight
+seg_path_backbone.layers.0.1.1.ffn.layers.4.bias
+seg_path_backbone.layers.0.2.weight
+seg_path_backbone.layers.0.2.bias
+seg_path_backbone.layers.1.0.projection.weight
+seg_path_backbone.layers.1.0.projection.bias
+seg_path_backbone.layers.1.0.norm.weight
+seg_path_backbone.layers.1.0.norm.bias
+seg_path_backbone.layers.1.1.0.norm1.weight
+seg_path_backbone.layers.1.1.0.norm1.bias
+seg_path_backbone.layers.1.1.0.attn.attn.in_proj_weight
+seg_path_backbone.layers.1.1.0.attn.attn.in_proj_bias
+seg_path_backbone.layers.1.1.0.attn.attn.out_proj.weight
+seg_path_backbone.layers.1.1.0.attn.attn.out_proj.bias
+seg_path_backbone.layers.1.1.0.attn.sr.weight
+seg_path_backbone.layers.1.1.0.attn.sr.bias
+seg_path_backbone.layers.1.1.0.attn.norm.weight
+seg_path_backbone.layers.1.1.0.attn.norm.bias
+seg_path_backbone.layers.1.1.0.norm2.weight
+seg_path_backbone.layers.1.1.0.norm2.bias
+seg_path_backbone.layers.1.1.0.ffn.layers.0.weight
+seg_path_backbone.layers.1.1.0.ffn.layers.0.bias
+seg_path_backbone.layers.1.1.0.ffn.layers.1.weight
+seg_path_backbone.layers.1.1.0.ffn.layers.1.bias
+seg_path_backbone.layers.1.1.0.ffn.layers.4.weight
+seg_path_backbone.layers.1.1.0.ffn.layers.4.bias
+seg_path_backbone.layers.1.1.1.norm1.weight
+seg_path_backbone.layers.1.1.1.norm1.bias
+seg_path_backbone.layers.1.1.1.attn.attn.in_proj_weight
+seg_path_backbone.layers.1.1.1.attn.attn.in_proj_bias
+seg_path_backbone.layers.1.1.1.attn.attn.out_proj.weight
+seg_path_backbone.layers.1.1.1.attn.attn.out_proj.bias
+seg_path_backbone.layers.1.1.1.attn.sr.weight
+seg_path_backbone.layers.1.1.1.attn.sr.bias
+seg_path_backbone.layers.1.1.1.attn.norm.weight
+seg_path_backbone.layers.1.1.1.attn.norm.bias
+seg_path_backbone.layers.1.1.1.norm2.weight
+seg_path_backbone.layers.1.1.1.norm2.bias
+seg_path_backbone.layers.1.1.1.ffn.layers.0.weight
+seg_path_backbone.layers.1.1.1.ffn.layers.0.bias
+seg_path_backbone.layers.1.1.1.ffn.layers.1.weight
+seg_path_backbone.layers.1.1.1.ffn.layers.1.bias
+seg_path_backbone.layers.1.1.1.ffn.layers.4.weight
+seg_path_backbone.layers.1.1.1.ffn.layers.4.bias
+seg_path_backbone.layers.1.2.weight
+seg_path_backbone.layers.1.2.bias
+seg_path_backbone.layers.2.0.projection.weight
+seg_path_backbone.layers.2.0.projection.bias
+seg_path_backbone.layers.2.0.norm.weight
+seg_path_backbone.layers.2.0.norm.bias
+seg_path_backbone.layers.2.1.0.norm1.weight
+seg_path_backbone.layers.2.1.0.norm1.bias
+seg_path_backbone.layers.2.1.0.attn.attn.in_proj_weight
+seg_path_backbone.layers.2.1.0.attn.attn.in_proj_bias
+seg_path_backbone.layers.2.1.0.attn.attn.out_proj.weight
+seg_path_backbone.layers.2.1.0.attn.attn.out_proj.bias
+seg_path_backbone.layers.2.1.0.attn.sr.weight
+seg_path_backbone.layers.2.1.0.attn.sr.bias
+seg_path_backbone.layers.2.1.0.attn.norm.weight
+seg_path_backbone.layers.2.1.0.attn.norm.bias
+seg_path_backbone.layers.2.1.0.norm2.weight
+seg_path_backbone.layers.2.1.0.norm2.bias
+seg_path_backbone.layers.2.1.0.ffn.layers.0.weight
+seg_path_backbone.layers.2.1.0.ffn.layers.0.bias
+seg_path_backbone.layers.2.1.0.ffn.layers.1.weight
+seg_path_backbone.layers.2.1.0.ffn.layers.1.bias
+seg_path_backbone.layers.2.1.0.ffn.layers.4.weight
+seg_path_backbone.layers.2.1.0.ffn.layers.4.bias
+seg_path_backbone.layers.2.1.1.norm1.weight
+seg_path_backbone.layers.2.1.1.norm1.bias
+seg_path_backbone.layers.2.1.1.attn.attn.in_proj_weight
+seg_path_backbone.layers.2.1.1.attn.attn.in_proj_bias
+seg_path_backbone.layers.2.1.1.attn.attn.out_proj.weight
+seg_path_backbone.layers.2.1.1.attn.attn.out_proj.bias
+seg_path_backbone.layers.2.1.1.attn.sr.weight
+seg_path_backbone.layers.2.1.1.attn.sr.bias
+seg_path_backbone.layers.2.1.1.attn.norm.weight
+seg_path_backbone.layers.2.1.1.attn.norm.bias
+seg_path_backbone.layers.2.1.1.norm2.weight
+seg_path_backbone.layers.2.1.1.norm2.bias
+seg_path_backbone.layers.2.1.1.ffn.layers.0.weight
+seg_path_backbone.layers.2.1.1.ffn.layers.0.bias
+seg_path_backbone.layers.2.1.1.ffn.layers.1.weight
+seg_path_backbone.layers.2.1.1.ffn.layers.1.bias
+seg_path_backbone.layers.2.1.1.ffn.layers.4.weight
+seg_path_backbone.layers.2.1.1.ffn.layers.4.bias
+seg_path_backbone.layers.2.2.weight
+seg_path_backbone.layers.2.2.bias
+seg_path_backbone.layers.3.0.projection.weight
+seg_path_backbone.layers.3.0.projection.bias
+seg_path_backbone.layers.3.0.norm.weight
+seg_path_backbone.layers.3.0.norm.bias
+seg_path_backbone.layers.3.1.0.norm1.weight
+seg_path_backbone.layers.3.1.0.norm1.bias
+seg_path_backbone.layers.3.1.0.attn.attn.in_proj_weight
+seg_path_backbone.layers.3.1.0.attn.attn.in_proj_bias
+seg_path_backbone.layers.3.1.0.attn.attn.out_proj.weight
+seg_path_backbone.layers.3.1.0.attn.attn.out_proj.bias
+seg_path_backbone.layers.3.1.0.norm2.weight
+seg_path_backbone.layers.3.1.0.norm2.bias
+seg_path_backbone.layers.3.1.0.ffn.layers.0.weight
+seg_path_backbone.layers.3.1.0.ffn.layers.0.bias
+seg_path_backbone.layers.3.1.0.ffn.layers.1.weight
+seg_path_backbone.layers.3.1.0.ffn.layers.1.bias
+seg_path_backbone.layers.3.1.0.ffn.layers.4.weight
+seg_path_backbone.layers.3.1.0.ffn.layers.4.bias
+seg_path_backbone.layers.3.1.1.norm1.weight
+seg_path_backbone.layers.3.1.1.norm1.bias
+seg_path_backbone.layers.3.1.1.attn.attn.in_proj_weight
+seg_path_backbone.layers.3.1.1.attn.attn.in_proj_bias
+seg_path_backbone.layers.3.1.1.attn.attn.out_proj.weight
+seg_path_backbone.layers.3.1.1.attn.attn.out_proj.bias
+seg_path_backbone.layers.3.1.1.norm2.weight
+seg_path_backbone.layers.3.1.1.norm2.bias
+seg_path_backbone.layers.3.1.1.ffn.layers.0.weight
+seg_path_backbone.layers.3.1.1.ffn.layers.0.bias
+seg_path_backbone.layers.3.1.1.ffn.layers.1.weight
+seg_path_backbone.layers.3.1.1.ffn.layers.1.bias
+seg_path_backbone.layers.3.1.1.ffn.layers.4.weight
+seg_path_backbone.layers.3.1.1.ffn.layers.4.bias
+seg_path_backbone.layers.3.2.weight
+seg_path_backbone.layers.3.2.bias
+seg_path_decode_head.conv_seg.weight
+seg_path_decode_head.conv_seg.bias
+seg_path_decode_head.convs.0.conv.weight
+seg_path_decode_head.convs.0.conv.bias
+seg_path_decode_head.convs.1.conv.weight
+seg_path_decode_head.convs.1.conv.bias
+seg_path_decode_head.convs.2.conv.weight
+seg_path_decode_head.convs.2.conv.bias
+seg_path_decode_head.convs.3.conv.weight
+seg_path_decode_head.convs.3.conv.bias
+seg_path_decode_head.fusion_conv.conv.weight
+seg_path_decode_head.fusion_conv.conv.bias
+Turning off gradients for names: []
+Turning on gradients for names: ['seg_path_backbone', 'seg_path_decode_head', 'data_preprocessor']
+Turning off gradients for not specific names: {'backbone'}
+All sub models:
+data_preprocessor, val_evaluator, backbone, seg_path_backbone, seg_path_decode_head, avg_pool, SAM_focal_loss, SAM_dice_loss, SAM_MSE_loss,
+Needed train models:
+seg_path_decode_head, seg_path_backbone,
+查看优化器参数
+[torch.Size([2, 256, 1, 1]), torch.Size([2]), torch.Size([256, 32, 1, 1]), torch.Size([256]), torch.Size([256, 64, 1, 1]), torch.Size([256]), torch.Size([256, 160, 1, 1]), torch.Size([256]), torch.Size([256, 256, 1, 1]), torch.Size([256]), torch.Size([256, 1024, 1, 1]), torch.Size([256])] 学习率:  0.0005 wd: 0.001
+[torch.Size([32, 3, 7, 7]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([96, 32]), torch.Size([96]), torch.Size([32, 32]), torch.Size([32]), torch.Size([32, 32, 8, 8]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([128, 32, 1, 1]), torch.Size([128]), torch.Size([128, 1, 3, 3]), torch.Size([128]), torch.Size([32, 128, 1, 1]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([96, 32]), torch.Size([96]), torch.Size([32, 32]), torch.Size([32]), torch.Size([32, 32, 8, 8]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([128, 32, 1, 1]), torch.Size([128]), torch.Size([128, 1, 3, 3]), torch.Size([128]), torch.Size([32, 128, 1, 1]), torch.Size([32]), torch.Size([32]), torch.Size([32]), torch.Size([64, 32, 3, 3]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([192, 64]), torch.Size([192]), torch.Size([64, 64]), torch.Size([64]), torch.Size([64, 64, 4, 4]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([256, 64, 1, 1]), torch.Size([256]), torch.Size([256, 1, 3, 3]), torch.Size([256]), torch.Size([64, 256, 1, 1]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([192, 64]), torch.Size([192]), torch.Size([64, 64]), torch.Size([64]), torch.Size([64, 64, 4, 4]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([256, 64, 1, 1]), torch.Size([256]), torch.Size([256, 1, 3, 3]), torch.Size([256]), torch.Size([64, 256, 1, 1]), torch.Size([64]), torch.Size([64]), torch.Size([64]), torch.Size([160, 64, 3, 3]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([480, 160]), torch.Size([480]), torch.Size([160, 160]), torch.Size([160]), torch.Size([160, 160, 2, 2]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([640, 160, 1, 1]), torch.Size([640]), torch.Size([640, 1, 3, 3]), torch.Size([640]), torch.Size([160, 640, 1, 1]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([480, 160]), torch.Size([480]), torch.Size([160, 160]), torch.Size([160]), torch.Size([160, 160, 2, 2]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([640, 160, 1, 1]), torch.Size([640]), torch.Size([640, 1, 3, 3]), torch.Size([640]), torch.Size([160, 640, 1, 1]), torch.Size([160]), torch.Size([160]), torch.Size([160]), torch.Size([256, 160, 3, 3]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([768, 256]), torch.Size([768]), torch.Size([256, 256]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([1024, 256, 1, 1]), torch.Size([1024]), torch.Size([1024, 1, 3, 3]), torch.Size([1024]), torch.Size([256, 1024, 1, 1]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([768, 256]), torch.Size([768]), torch.Size([256, 256]), torch.Size([256]), torch.Size([256]), torch.Size([256]), torch.Size([1024, 256, 1, 1]), torch.Size([1024]), torch.Size([1024, 1, 3, 3]), torch.Size([1024]), torch.Size([256, 1024, 1, 1]), torch.Size([256]), torch.Size([256]), torch.Size([256])] 学习率:  0.0005 wd: 0.001
+
+Sanity Checking DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:07<00:00,  3.62s/it]03/23 22:12:05 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/23 22:12:05 - mmengine - [97m[4mINFO[39m[24m -
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 12.74 | 12.74 |
+|     UV     | 16.45 | 99.69 |
++------------+-------+-------+
+Epoch 0:   0%|                                                                                                                                                        | 0/33 [00:00<?, ?it/s]
+/data2/zhangxin/urban_village/AAAI2024/code/UVSAM/tools/../mmpl/models/pler/SegSAMPLerEmbAdd.py:264: UserWarning: Using a target size (torch.Size([1, 1])) that is different to the input size (torch.Size([1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|████| 33/33 [01:10<00:00,  2.13s/it, v_num=b6ej, train_loss=3.310, train_loss_ce=0.486, train_acc_seg=75.90, train_loss_SAM=2.820, loss=3.310, max_grad=8.490, min_grad=0.0908]
+
+
+
+03/23 22:13:23 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.32it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 78.57 | 84.03 |
+|     UV     | 34.94 | 63.93 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|█| 33/33 [00:46<00:00,  1.41s/it, v_num=b6ej, train_loss=1.960, train_loss_ce=0.193, train_acc_seg=92.70, train_loss_SAM=1.760, loss=1.960, max_grad=0.816, min_grad=0.0124, va
+
+
+
+
+03/23 22:14:24 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.19it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 85.01 | 89.49 |
+|     UV     | 47.33 | 72.91 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 2: 100%|█| 33/33 [00:40<00:00,  1.23s/it, v_num=b6ej, train_loss=1.050, train_loss_ce=0.170, train_acc_seg=95.20, train_loss_SAM=0.884, loss=1.050, max_grad=1.020, min_grad=0.00603, v
+
+03/23 22:16:51 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.33it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 87.13 |  92.5 |
+|     UV     | 49.43 | 68.41 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 3: 100%|█| 33/33 [00:39<00:00,  1.20s/it, v_num=b6ej, train_loss=2.220, train_loss_ce=0.312, train_acc_seg=86.60, train_loss_SAM=1.910, loss=2.220, max_grad=1.730, min_grad=0.00276, v
+
+
+03/23 22:19:50 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.17it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 87.76 | 92.45 |
+|     UV     | 52.42 | 72.66 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 4: 100%|█| 33/33 [00:36<00:00,  1.12s/it, v_num=b6ej, train_loss=3.740, train_loss_ce=0.149, train_acc_seg=95.90, train_loss_SAM=3.590, loss=3.740, max_grad=0.979, min_grad=0.0141, va
+
+
+
+03/23 22:23:21 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.13it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 88.46 | 92.78 |
+|     UV     | 54.83 | 75.04 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 5: 100%|█| 33/33 [00:37<00:00,  1.15s/it, v_num=b6ej, train_loss=1.310, train_loss_ce=0.0647, train_acc_seg=98.50, train_loss_SAM=1.250, loss=1.310, max_grad=0.790, min_grad=0.00834,
+
+
+03/23 22:25:51 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.47it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 89.29 | 93.56 |
+|     UV     | 56.91 |  75.6 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 6: 100%|█| 33/33 [00:37<00:00,  1.15s/it, v_num=b6ej, train_loss=1.930, train_loss_ce=0.163, train_acc_seg=93.40, train_loss_SAM=1.770, loss=1.930, max_grad=1.900, min_grad=0.0236, va
+
+
+03/23 22:29:08 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 89.59 | 93.67 |
+|     UV     | 58.05 | 76.79 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 7: 100%|█| 33/33 [00:35<00:00,  1.07s/it, v_num=b6ej, train_loss=2.520, train_loss_ce=0.272, train_acc_seg=87.90, train_loss_SAM=2.250, loss=2.520, max_grad=2.210, min_grad=0.0273, va
+
+
+
+03/23 22:31:32 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 89.99 |  94.3 |
+|     UV     | 58.59 | 75.61 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 8: 100%|█| 33/33 [00:37<00:00,  1.15s/it, v_num=b6ej, train_loss=1.550, train_loss_ce=0.259, train_acc_seg=87.00, train_loss_SAM=1.290, loss=1.550, max_grad=2.150, min_grad=0.0256, va
+
+
+
+03/23 22:34:25 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.35it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 90.33 | 94.56 |
+|     UV     |  59.6 |  76.1 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 9: 100%|█| 33/33 [00:33<00:00,  1.01s/it, v_num=b6ej, train_loss=3.330, train_loss_ce=0.150, train_acc_seg=95.40, train_loss_SAM=3.180, loss=3.330, max_grad=1.730, min_grad=0.0174, va
+
+
+03/23 22:37:20 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.45it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 90.64 | 94.89 |
+|     UV     |  60.4 | 76.11 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 10: 100%|█| 33/33 [00:33<00:00,  1.03s/it, v_num=b6ej, train_loss=4.640, train_loss_ce=0.0935, train_acc_seg=96.00, train_loss_SAM=4.550, loss=4.640, max_grad=0.493, min_grad=0.00561,
+
+
+03/23 22:40:00 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.48it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 90.76 | 95.25 |
+|     UV     | 60.24 | 74.81 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 11: 100%|█| 33/33 [00:32<00:00,  1.02it/s, v_num=b6ej, train_loss=1.240, train_loss_ce=0.116, train_acc_seg=96.20, train_loss_SAM=1.120, loss=1.240, max_grad=0.633, min_grad=0.00625,
+
+
+
+03/23 22:43:14 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.55it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 90.83 | 95.59 |
+|     UV     | 59.88 | 73.33 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 12: 100%|█| 33/33 [00:32<00:00,  1.00it/s, v_num=b6ej, train_loss=11.00, train_loss_ce=0.302, train_acc_seg=85.10, train_loss_SAM=10.70, loss=11.00, max_grad=0.796, min_grad=0.0128, v
+
+
+
+03/23 22:46:30 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.38it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 90.93 | 95.53 |
+|     UV     | 60.51 | 74.28 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 13: 100%|█| 33/33 [00:34<00:00,  1.06s/it, v_num=b6ej, train_loss=1.240, train_loss_ce=0.151, train_acc_seg=93.30, train_loss_SAM=1.090, loss=1.240, max_grad=0.560, min_grad=0.00642,
+
+
+
+03/23 22:50:32 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.43it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.09 | 95.65 |
+|     UV     | 61.04 | 74.55 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 14: 100%|█| 33/33 [00:32<00:00,  1.03it/s, v_num=b6ej, train_loss=0.883, train_loss_ce=0.112, train_acc_seg=95.70, train_loss_SAM=0.770, loss=0.883, max_grad=0.385, min_grad=0.00474,
+03/23 22:54:48 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.24 | 95.84 |
+|     UV     | 61.37 | 74.34 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 15: 100%|█| 33/33 [00:32<00:00,  1.03it/s, v_num=b6ej, train_loss=1.200, train_loss_ce=0.113, train_acc_seg=96.30, train_loss_SAM=1.080, loss=1.200, max_grad=0.472, min_grad=0.00336,
+
+03/23 22:58:08 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.51it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  91.3 | 96.05 |
+|     UV     | 61.23 | 73.53 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 16: 100%|█| 33/33 [00:34<00:00,  1.03s/it, v_num=b6ej, train_loss=2.830, train_loss_ce=0.147, train_acc_seg=94.70, train_loss_SAM=2.680, loss=2.830, max_grad=0.765, min_grad=0.00562,
+
+
+03/23 23:01:48 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.28it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  91.4 | 96.13 |
+|     UV     | 61.56 | 73.67 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 17: 100%|█| 33/33 [00:34<00:00,  1.03s/it, v_num=b6ej, train_loss=2.940, train_loss_ce=0.0854, train_acc_seg=96.60, train_loss_SAM=2.860, loss=2.940, max_grad=0.808, min_grad=0.00893,
+
+
+
+03/23 23:05:18 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.44it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.51 | 96.18 |
+|     UV     | 61.97 |  74.0 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 18: 100%|█| 33/33 [00:32<00:00,  1.00it/s, v_num=b6ej, train_loss=23.40, train_loss_ce=0.210, train_acc_seg=89.60, train_loss_SAM=23.20, loss=23.40, max_grad=0.570, min_grad=0.00169,
+03/23 23:07:57 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.59 | 96.23 |
+|     UV     | 62.28 | 74.22 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 19: 100%|█| 33/33 [00:32<00:00,  1.00it/s, v_num=b6ej, train_loss=1.570, train_loss_ce=0.0808, train_acc_seg=96.70, train_loss_SAM=1.490, loss=1.570, max_grad=0.340, min_grad=0.00309,
+
+
+
+03/23 23:11:00 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.54it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.69 | 96.29 |
+|     UV     | 62.66 | 74.48 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 20: 100%|█| 33/33 [00:31<00:00,  1.05it/s, v_num=b6ej, train_loss=2.280, train_loss_ce=0.0466, train_acc_seg=98.20, train_loss_SAM=2.230, loss=2.280, max_grad=0.422, min_grad=0.00296,
+
+
+
+03/23 23:14:31 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.68 | 96.43 |
+|     UV     | 62.33 | 73.65 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 21: 100%|█| 33/33 [00:32<00:00,  1.00it/s, v_num=b6ej, train_loss=2.930, train_loss_ce=0.154, train_acc_seg=93.40, train_loss_SAM=2.780, loss=2.930, max_grad=1.430, min_grad=0.012, va
+
+
+
+03/23 23:17:48 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.73 | 96.44 |
+|     UV     | 62.58 | 73.93 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 22: 100%|█| 33/33 [00:34<00:00,  1.03s/it, v_num=b6ej, train_loss=1.380, train_loss_ce=0.219, train_acc_seg=87.90, train_loss_SAM=1.160, loss=1.380, max_grad=0.512, min_grad=0.00415,
+
+03/23 23:21:49 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.48it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  91.8 | 96.49 |
+|     UV     | 62.82 | 74.02 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 23: 100%|█| 33/33 [00:33<00:00,  1.01s/it, v_num=b6ej, train_loss=1.090, train_loss_ce=0.0733, train_acc_seg=97.00, train_loss_SAM=1.020, loss=1.090, max_grad=0.775, min_grad=0.00412,
+
+03/23 23:25:50 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.39it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.78 | 96.41 |
+|     UV     | 62.86 | 74.33 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 24: 100%|█| 33/33 [00:33<00:00,  1.02s/it, v_num=b6ej, train_loss=4.230, train_loss_ce=0.187, train_acc_seg=93.10, train_loss_SAM=4.040, loss=4.230, max_grad=0.688, min_grad=0.00525,
+
+
+03/23 23:28:59 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.86 |  96.5 |
+|     UV     | 63.09 | 74.32 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 25: 100%|█| 33/33 [00:33<00:00,  1.00s/it, v_num=b6ej, train_loss=2.050, train_loss_ce=0.103, train_acc_seg=95.20, train_loss_SAM=1.950, loss=2.050, max_grad=0.156, min_grad=0.00167,
+
+
+
+03/23 23:33:24 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.43it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.92 | 96.57 |
+|     UV     | 63.24 | 74.27 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 26: 100%|█| 33/33 [00:32<00:00,  1.01it/s, v_num=b6ej, train_loss=1.780, train_loss_ce=0.0432, train_acc_seg=98.60, train_loss_SAM=1.740, loss=1.780, max_grad=0.512, min_grad=0.00375,
+
+
+
+03/23 23:37:01 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 91.95 | 96.57 |
+|     UV     | 63.38 | 74.43 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 27: 100%|█| 33/33 [00:33<00:00,  1.01s/it, v_num=b6ej, train_loss=1.210, train_loss_ce=0.112, train_acc_seg=95.30, train_loss_SAM=1.100, loss=1.210, max_grad=0.953, min_grad=0.00772,
+03/23 23:39:58 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.02 | 96.64 |
+|     UV     | 63.58 | 74.44 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 28: 100%|█| 33/33 [00:34<00:00,  1.04s/it, v_num=b6ej, train_loss=1.380, train_loss_ce=0.106, train_acc_seg=95.10, train_loss_SAM=1.280, loss=1.380, max_grad=0.501, min_grad=0.00325,
+
+
+
+03/23 23:43:53 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.06 | 96.69 |
+|     UV     | 63.71 | 74.42 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 29: 100%|█| 33/33 [00:32<00:00,  1.00it/s, v_num=b6ej, train_loss=2.620, train_loss_ce=0.0841, train_acc_seg=97.00, train_loss_SAM=2.540, loss=2.620, max_grad=0.379, min_grad=0.0015,
+
+
+03/23 23:47:12 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  92.1 | 96.77 |
+|     UV     | 63.73 |  74.2 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 30: 100%|█| 33/33 [00:32<00:00,  1.01it/s, v_num=b6ej, train_loss=1.160, train_loss_ce=0.0982, train_acc_seg=96.60, train_loss_SAM=1.060, loss=1.160, max_grad=0.674, min_grad=0.00686,
+
+03/23 23:49:50 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.14 | 96.81 |
+|     UV     | 63.88 | 74.23 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 31: 100%|█| 33/33 [00:32<00:00,  1.01it/s, v_num=b6ej, train_loss=1.740, train_loss_ce=0.0809, train_acc_seg=96.80, train_loss_SAM=1.660, loss=1.740, max_grad=0.186, min_grad=0.00177,
+
+
+
+03/23 23:53:25 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:07<00:00,  1.42it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.19 |  96.8 |
+|     UV     | 64.15 | 74.58 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 32: 100%|█| 33/33 [00:33<00:00,  1.00s/it, v_num=b6ej, train_loss=0.569, train_loss_ce=0.0556, train_acc_seg=97.70, train_loss_SAM=0.514, loss=0.569, max_grad=0.825, min_grad=0.00485,
+
+03/23 23:55:55 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.24 | 96.85 |
+|     UV     | 64.32 | 74.62 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 33: 100%|█| 33/33 [00:32<00:00,  1.01it/s, v_num=b6ej, train_loss=1.150, train_loss_ce=0.108, train_acc_seg=95.90, train_loss_SAM=1.040, loss=1.150, max_grad=0.517, min_grad=0.00237,
+
+
+
+
+03/23 23:59:00 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.29 | 96.89 |
+|     UV     |  64.5 | 74.69 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 34: 100%|█| 33/33 [00:32<00:00,  1.01it/s, v_num=b6ej, train_loss=2.280, train_loss_ce=0.0878, train_acc_seg=96.40, train_loss_SAM=2.190, loss=2.280, max_grad=0.641, min_grad=0.0056,
+
+03/24 00:01:46 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.55it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.35 | 96.91 |
+|     UV     | 64.75 | 74.93 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 35: 100%|█| 33/33 [00:32<00:00,  1.03it/s, v_num=b6ej, train_loss=0.860, train_loss_ce=0.0638, train_acc_seg=97.30, train_loss_SAM=0.796, loss=0.860, max_grad=0.253, min_grad=0.00142,
+
+
+03/24 00:04:17 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.55it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.38 | 96.93 |
+|     UV     | 64.87 | 75.01 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 36: 100%|█| 33/33 [00:31<00:00,  1.04it/s, v_num=b6ej, train_loss=1.010, train_loss_ce=0.0701, train_acc_seg=97.20, train_loss_SAM=0.941, loss=1.010, max_grad=0.204, min_grad=0.00159,
+
+
+
+03/24 00:07:32 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.47it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.42 | 96.94 |
+|     UV     | 65.04 | 75.16 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 37: 100%|█| 33/33 [00:31<00:00,  1.03it/s, v_num=b6ej, train_loss=1.700, train_loss_ce=0.0947, train_acc_seg=96.00, train_loss_SAM=1.610, loss=1.700, max_grad=0.871, min_grad=0.00381,
+03/24 00:10:21 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.56it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.45 | 96.97 |
+|     UV     | 65.14 | 75.18 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 38: 100%|█| 33/33 [00:32<00:00,  1.03it/s, v_num=b6ej, train_loss=1.700, train_loss_ce=0.185, train_acc_seg=92.40, train_loss_SAM=1.520, loss=1.700, max_grad=0.951, min_grad=0.00953,
+
+
+
+03/24 00:13:26 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.48it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.49 | 96.97 |
+|     UV     | 65.32 | 75.38 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 39: 100%|█| 33/33 [00:31<00:00,  1.04it/s, v_num=b6ej, train_loss=1.550, train_loss_ce=0.105, train_acc_seg=95.50, train_loss_SAM=1.450, loss=1.550, max_grad=0.560, min_grad=0.00191,
+
+03/24 00:16:48 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.54it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.51 |  97.0 |
+|     UV     | 65.39 | 75.37 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 40: 100%|█| 33/33 [00:31<00:00,  1.04it/s, v_num=b6ej, train_loss=1.890, train_loss_ce=0.0587, train_acc_seg=97.80, train_loss_SAM=1.840, loss=1.890, max_grad=0.815, min_grad=0.00282,
+
+03/24 00:19:35 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.55 | 97.01 |
+|     UV     | 65.51 | 75.45 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 41: 100%|█| 33/33 [00:32<00:00,  1.02it/s, v_num=b6ej, train_loss=5.840, train_loss_ce=0.269, train_acc_seg=87.40, train_loss_SAM=5.570, loss=5.840, max_grad=2.290, min_grad=0.0173, v
+
+
+03/24 00:22:38 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.58 | 97.05 |
+|     UV     |  65.6 | 75.44 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 42: 100%|█| 33/33 [00:32<00:00,  1.02it/s, v_num=b6ej, train_loss=1.140, train_loss_ce=0.0484, train_acc_seg=98.50, train_loss_SAM=1.100, loss=1.140, max_grad=0.642, min_grad=0.00392,
+
+
+03/24 00:25:36 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  92.6 | 97.04 |
+|     UV     | 65.76 | 75.65 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 43: 100%|█| 33/33 [00:31<00:00,  1.04it/s, v_num=b6ej, train_loss=2.000, train_loss_ce=0.108, train_acc_seg=95.30, train_loss_SAM=1.890, loss=2.000, max_grad=0.688, min_grad=0.00517,
+
+
+03/24 00:28:46 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.54it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.64 | 97.06 |
+|     UV     | 65.89 | 75.72 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 44: 100%|█| 33/33 [00:31<00:00,  1.04it/s, v_num=b6ej, train_loss=1.110, train_loss_ce=0.0567, train_acc_seg=98.20, train_loss_SAM=1.050, loss=1.110, max_grad=0.642, min_grad=0.00366,
+
+
+
+03/24 00:32:44 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.66 | 97.05 |
+|     UV     | 66.02 | 75.93 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 45: 100%|█| 33/33 [00:31<00:00,  1.06it/s, v_num=b6ej, train_loss=1.740, train_loss_ce=0.0811, train_acc_seg=96.90, train_loss_SAM=1.660, loss=1.740, max_grad=0.383, min_grad=0.00268,
+
+
+
+03/24 00:36:07 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.52it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.69 | 97.07 |
+|     UV     | 66.16 | 76.01 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 46: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=1.830, train_loss_ce=0.0855, train_acc_seg=96.80, train_loss_SAM=1.750, loss=1.830, max_grad=0.886, min_grad=0.00659,
+
+
+03/24 00:39:19 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.51it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.72 | 97.07 |
+|     UV     | 66.26 | 76.13 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 47: 100%|█| 33/33 [00:31<00:00,  1.05it/s, v_num=b6ej, train_loss=5.260, train_loss_ce=0.115, train_acc_seg=94.30, train_loss_SAM=5.150, loss=5.260, max_grad=0.462, min_grad=0.00429,
+
+
+
+03/24 00:43:40 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.45it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.75 | 97.09 |
+|     UV     |  66.4 | 76.23 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 48: 100%|█| 33/33 [00:30<00:00,  1.07it/s, v_num=b6ej, train_loss=0.920, train_loss_ce=0.0452, train_acc_seg=98.30, train_loss_SAM=0.875, loss=0.920, max_grad=0.285, min_grad=0.00158,
+
+
+
+03/24 00:47:37 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.78 |  97.1 |
+|     UV     | 66.53 | 76.33 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+Epoch 49: 100%|█| 33/33 [00:30<00:00,  1.09it/s, v_num=b6ej, train_loss=1.560, train_loss_ce=0.0877, train_acc_seg=96.60, train_loss_SAM=1.480, loss=1.560, max_grad=0.452, min_grad=0.00224,
+
+
+03/24 00:50:10 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.48it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.82 | 97.11 |
+|     UV     | 66.69 | 76.47 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 50: 100%|█| 33/33 [00:30<00:00,  1.07it/s, v_num=b6ej, train_loss=2.710, train_loss_ce=0.0472, train_acc_seg=98.30, train_loss_SAM=2.660, loss=2.710, max_grad=0.503, min_grad=0.00214,
+
+
+
+03/24 00:53:48 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.85 | 97.14 |
+|     UV     |  66.8 |  76.5 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 51: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=3.720, train_loss_ce=0.120, train_acc_seg=95.40, train_loss_SAM=3.600, loss=3.720, max_grad=1.430, min_grad=0.0125, v
+
+
+03/24 00:56:52 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.88 | 97.15 |
+|     UV     | 66.96 | 76.67 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 52: 100%|█| 33/33 [00:30<00:00,  1.07it/s, v_num=b6ej, train_loss=1.500, train_loss_ce=0.0443, train_acc_seg=98.30, train_loss_SAM=1.460, loss=1.500, max_grad=0.462, min_grad=0.00481,
+
+
+03/24 01:00:07 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.50it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  92.9 | 97.14 |
+|     UV     | 67.04 | 76.78 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 53: 100%|█| 33/33 [00:30<00:00,  1.07it/s, v_num=b6ej, train_loss=0.883, train_loss_ce=0.143, train_acc_seg=94.00, train_loss_SAM=0.740, loss=0.883, max_grad=0.962, min_grad=0.00816,
+
+
+
+03/24 01:06:14 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.92 | 97.15 |
+|     UV     | 67.15 | 76.89 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 54: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=2.040, train_loss_ce=0.105, train_acc_seg=95.90, train_loss_SAM=1.930, loss=2.040, max_grad=1.130, min_grad=0.0072, v
+
+
+03/24 01:10:14 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.58it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.95 | 97.17 |
+|     UV     | 67.25 | 76.94 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 55: 100%|█| 33/33 [00:29<00:00,  1.10it/s, v_num=b6ej, train_loss=1.060, train_loss_ce=0.0509, train_acc_seg=97.80, train_loss_SAM=1.010, loss=1.060, max_grad=0.550, min_grad=0.00247,
+
+
+
+03/24 01:14:25 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 92.98 | 97.17 |
+|     UV     | 67.39 | 77.07 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 56: 100%|█| 33/33 [00:31<00:00,  1.05it/s, v_num=b6ej, train_loss=4.420, train_loss_ce=0.0609, train_acc_seg=97.30, train_loss_SAM=4.360, loss=4.420, max_grad=0.324, min_grad=0.00223,
+
+
+
+03/24 01:19:13 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.48it/s]
++------------+-------+------+
+|   Class    |  IoU  | Acc  |
++------------+-------+------+
+| background | 92.99 | 97.2 |
+|     UV     | 67.42 | 77.0 |
++------------+-------+------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 57: 100%|█| 33/33 [00:29<00:00,  1.12it/s, v_num=b6ej, train_loss=0.737, train_loss_ce=0.0722, train_acc_seg=97.00, train_loss_SAM=0.664, loss=0.737, max_grad=0.721, min_grad=0.00324,
+
+
+03/24 01:24:16 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.61it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.02 | 97.21 |
+|     UV     | 67.52 | 77.09 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 58: 100%|█| 33/33 [00:30<00:00,  1.09it/s, v_num=b6ej, train_loss=0.670, train_loss_ce=0.039, train_acc_seg=98.30, train_loss_SAM=0.630, loss=0.670, max_grad=0.839, min_grad=0.00461,
+
+03/24 01:28:16 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.03 | 97.21 |
+|     UV     | 67.58 | 77.18 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 59: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=1.590, train_loss_ce=0.109, train_acc_seg=95.30, train_loss_SAM=1.480, loss=1.590, max_grad=0.842, min_grad=0.00492,
+
+
+03/24 01:32:28 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.05 | 97.22 |
+|     UV     | 67.68 | 77.24 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 60: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=6.820, train_loss_ce=0.0907, train_acc_seg=96.10, train_loss_SAM=6.730, loss=6.820, max_grad=0.488, min_grad=0.00411,
+
+
+03/24 01:37:02 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.54it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.07 | 97.23 |
+|     UV     | 67.76 |  77.3 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 61: 100%|█| 33/33 [00:29<00:00,  1.12it/s, v_num=b6ej, train_loss=0.442, train_loss_ce=0.0613, train_acc_seg=97.40, train_loss_SAM=0.381, loss=0.442, max_grad=0.209, min_grad=0.00189,
+
+
+
+03/24 01:40:31 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.52it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.09 | 97.24 |
+|     UV     | 67.85 | 77.37 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 62: 100%|█| 33/33 [00:30<00:00,  1.07it/s, v_num=b6ej, train_loss=1.290, train_loss_ce=0.0486, train_acc_seg=98.30, train_loss_SAM=1.250, loss=1.290, max_grad=0.269, min_grad=0.00276,
+
+03/24 01:45:21 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.49it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.12 | 97.25 |
+|     UV     | 67.96 | 77.47 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 63: 100%|█| 33/33 [00:29<00:00,  1.11it/s, v_num=b6ej, train_loss=3.250, train_loss_ce=0.040, train_acc_seg=98.50, train_loss_SAM=3.210, loss=3.250, max_grad=0.254, min_grad=0.00189,
+
+
+
+03/24 01:49:50 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.46it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.14 | 97.25 |
+|     UV     | 68.07 | 77.57 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 64: 100%|█| 33/33 [00:29<00:00,  1.11it/s, v_num=b6ej, train_loss=1.070, train_loss_ce=0.0865, train_acc_seg=96.30, train_loss_SAM=0.983, loss=1.070, max_grad=0.486, min_grad=0.00309,
+
+
+03/24 01:55:30 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.55it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.16 | 97.25 |
+|     UV     | 68.14 | 77.66 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 65: 100%|█| 33/33 [00:31<00:00,  1.06it/s, v_num=b6ej, train_loss=1.300, train_loss_ce=0.145, train_acc_seg=94.80, train_loss_SAM=1.150, loss=1.300, max_grad=1.020, min_grad=0.00546,
+
+03/24 02:01:21 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.18 | 97.26 |
+|     UV     | 68.23 | 77.72 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 66: 100%|█| 33/33 [00:31<00:00,  1.06it/s, v_num=b6ej, train_loss=0.288, train_loss_ce=0.0529, train_acc_seg=97.70, train_loss_SAM=0.235, loss=0.288, max_grad=0.175, min_grad=0.00107,
+
+03/24 02:07:52 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.47it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  93.2 | 97.27 |
+|     UV     | 68.31 | 77.81 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 67: 100%|█| 33/33 [00:29<00:00,  1.11it/s, v_num=b6ej, train_loss=0.985, train_loss_ce=0.107, train_acc_seg=95.40, train_loss_SAM=0.879, loss=0.985, max_grad=0.721, min_grad=0.00422,
+03/24 02:17:46 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.51it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.21 | 97.28 |
+|     UV     | 68.38 | 77.85 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+Epoch 68: 100%|█| 33/33 [00:29<00:00,  1.12it/s, v_num=b6ej, train_loss=0.281, train_loss_ce=0.0749, train_acc_seg=96.70, train_loss_SAM=0.206, loss=0.281, max_grad=0.366, min_grad=0.00247,
+03/24 02:30:44 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.23 | 97.28 |
+|     UV     | 68.47 | 77.94 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+Epoch 69: 100%|█| 33/33 [00:30<00:00,  1.09it/s, v_num=b6ej, train_loss=2.270, train_loss_ce=0.0614, train_acc_seg=97.40, train_loss_SAM=2.210, loss=2.270, max_grad=1.630, min_grad=0.00351,
+
+
+03/24 02:41:27 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.54it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.25 | 97.28 |
+|     UV     | 68.56 | 78.02 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 70: 100%|█| 33/33 [00:29<00:00,  1.13it/s, v_num=b6ej, train_loss=1.510, train_loss_ce=0.0772, train_acc_seg=96.80, train_loss_SAM=1.440, loss=1.510, max_grad=1.350, min_grad=0.00402,
+
+
+03/24 02:51:38 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.55it/s]
++------------+-------+------+
+|   Class    |  IoU  | Acc  |
++------------+-------+------+
+| background | 93.26 | 97.3 |
+|     UV     |  68.6 | 78.0 |
++------------+-------+------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 71: 100%|█| 33/33 [00:30<00:00,  1.08it/s, v_num=b6ej, train_loss=0.772, train_loss_ce=0.0403, train_acc_seg=98.40, train_loss_SAM=0.732, loss=0.772, max_grad=0.375, min_grad=0.00126,
+
+
+03/24 03:01:50 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.28 | 97.31 |
+|     UV     | 68.66 | 78.05 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 72: 100%|█| 33/33 [00:29<00:00,  1.11it/s, v_num=b6ej, train_loss=2.900, train_loss_ce=0.0654, train_acc_seg=97.40, train_loss_SAM=2.840, loss=2.900, max_grad=0.877, min_grad=0.00531,
+
+
+03/24 03:13:10 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.60it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  93.3 | 97.32 |
+|     UV     | 68.72 | 78.07 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 73: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=1.170, train_loss_ce=0.0639, train_acc_seg=97.50, train_loss_SAM=1.110, loss=1.170, max_grad=0.419, min_grad=0.0019, 03/24 03:25:13 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/24 03:25:13 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.63it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.31 | 97.33 |
+|     UV     | 68.78 |  78.1 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 74: 100%|█| 33/33 [00:29<00:00,  1.12it/s, v_num=b6ej, train_loss=1.010, train_loss_ce=0.0775, train_acc_seg=97.00, train_loss_SAM=0.937, loss=1.010, max_grad=0.829, min_grad=0.00418,
+
+
+03/24 03:35:47 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.32 | 97.34 |
+|     UV     | 68.83 | 78.12 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+Epoch 75: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=0.635, train_loss_ce=0.0411, train_acc_seg=98.40, train_loss_SAM=0.594, loss=0.635, max_grad=0.506, min_grad=0.00227,
+
+
+03/24 03:46:25 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.59it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.34 | 97.35 |
+|     UV     | 68.87 | 78.14 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 76: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=1.620, train_loss_ce=0.104, train_acc_seg=95.60, train_loss_SAM=1.520, loss=1.620, max_grad=0.577, min_grad=0.00388,
+
+03/24 03:56:33 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.35 | 97.35 |
+|     UV     | 68.92 | 78.19 |
++------------+-------+-------+
+
+
+
+
+
+
+Epoch 77: 100%|█| 33/33 [00:28<00:00,  1.16it/s, v_num=b6ej, train_loss=1.250, train_loss_ce=0.102, train_acc_seg=95.80, train_loss_SAM=1.150, loss=1.250, max_grad=0.817, min_grad=0.00341,
+03/24 04:09:33 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.61it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.36 | 97.36 |
+|     UV     | 68.97 | 78.24 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 78: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.160, train_loss_ce=0.0269, train_acc_seg=98.90, train_loss_SAM=1.130, loss=1.160, max_grad=1.480, min_grad=0.0061,
+03/24 04:21:54 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.63it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.37 | 97.36 |
+|     UV     | 69.03 | 78.29 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+Epoch 79: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=0.975, train_loss_ce=0.0863, train_acc_seg=96.70, train_loss_SAM=0.889, loss=0.975, max_grad=1.240, min_grad=0.00479,
+03/24 04:33:02 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.56it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.38 | 97.37 |
+|     UV     | 69.08 | 78.31 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 80: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=0.417, train_loss_ce=0.0444, train_acc_seg=98.10, train_loss_SAM=0.372, loss=0.417, max_grad=0.325, min_grad=0.00174,
+
+
+
+03/24 04:43:21 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.63it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  93.4 | 97.38 |
+|     UV     | 69.13 | 78.35 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 81: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.050, train_loss_ce=0.0428, train_acc_seg=98.10, train_loss_SAM=1.010, loss=1.050, max_grad=0.304, min_grad=0.00123,03/24 04:54:11 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/24 04:54:11 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.57it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.41 | 97.39 |
+|     UV     | 69.17 | 78.36 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 82: 100%|█| 33/33 [00:29<00:00,  1.13it/s, v_num=b6ej, train_loss=0.797, train_loss_ce=0.0554, train_acc_seg=98.00, train_loss_SAM=0.742, loss=0.797, max_grad=0.399, min_grad=0.0016,
+
+
+03/24 05:03:54 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.63it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.42 | 97.39 |
+|     UV     | 69.22 | 78.39 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+Epoch 83: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=0.686, train_loss_ce=0.0452, train_acc_seg=98.00, train_loss_SAM=0.641, loss=0.686, max_grad=0.199, min_grad=0.000855
+
+
+03/24 05:13:57 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.60it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.43 |  97.4 |
+|     UV     | 69.26 | 78.41 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+Epoch 84: 100%|█| 33/33 [00:28<00:00,  1.16it/s, v_num=b6ej, train_loss=2.250, train_loss_ce=0.0384, train_acc_seg=98.50, train_loss_SAM=2.210, loss=2.250, max_grad=0.238, min_grad=0.00151,
+
+
+03/24 05:25:15 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.61it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.44 | 97.41 |
+|     UV     |  69.3 | 78.44 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 85: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=2.440, train_loss_ce=0.040, train_acc_seg=98.20, train_loss_SAM=2.400, loss=2.440, max_grad=1.440, min_grad=0.00674,
+
+03/24 05:35:29 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.59it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.45 | 97.41 |
+|     UV     | 69.35 | 78.47 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 86: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.980, train_loss_ce=0.0834, train_acc_seg=96.60, train_loss_SAM=1.900, loss=1.980, max_grad=0.345, min_grad=0.00165,
+
+03/24 05:47:46 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.56it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.46 | 97.42 |
+|     UV     | 69.39 | 78.49 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 87: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=6.610, train_loss_ce=0.0582, train_acc_seg=97.70, train_loss_SAM=6.560, loss=6.610, max_grad=0.227, min_grad=0.0012,
+
+
+03/24 06:00:49 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.60it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.47 | 97.43 |
+|     UV     | 69.43 | 78.52 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 88: 100%|█| 33/33 [00:28<00:00,  1.14it/s, v_num=b6ej, train_loss=1.130, train_loss_ce=0.0251, train_acc_seg=98.90, train_loss_SAM=1.100, loss=1.130, max_grad=0.341, min_grad=0.00192,
+
+
+03/24 06:13:52 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.53it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.48 | 97.43 |
+|     UV     | 69.48 | 78.55 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+Epoch 89: 100%|█| 33/33 [00:29<00:00,  1.14it/s, v_num=b6ej, train_loss=0.698, train_loss_ce=0.0404, train_acc_seg=98.30, train_loss_SAM=0.658, loss=0.698, max_grad=0.309, min_grad=0.00132,
+
+
+03/24 06:27:46 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:05<00:00,  1.67it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.49 | 97.44 |
+|     UV     | 69.51 | 78.56 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 90: 100%|█| 33/33 [00:28<00:00,  1.16it/s, v_num=b6ej, train_loss=2.530, train_loss_ce=0.0679, train_acc_seg=97.10, train_loss_SAM=2.460, loss=2.530, max_grad=0.627, min_grad=0.00381,
+
+03/24 06:38:55 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.58it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background |  93.5 | 97.44 |
+|     UV     | 69.55 | 78.59 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 91: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.250, train_loss_ce=0.0591, train_acc_seg=97.60, train_loss_SAM=1.190, loss=1.250, max_grad=0.158, min_grad=0.000813
+
+
+
+03/24 06:50:16 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.62it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.51 | 97.45 |
+|     UV     | 69.59 | 78.61 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+Epoch 92: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=0.747, train_loss_ce=0.0468, train_acc_seg=98.00, train_loss_SAM=0.701, loss=0.747, max_grad=0.320, min_grad=0.00142,03/24 07:01:11 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/24 07:01:11 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.61it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.52 | 97.46 |
+|     UV     | 69.63 | 78.64 |
++------------+-------+-------+
+
+
+
+
+
+
+
+Epoch 93: 100%|█| 33/33 [00:28<00:00,  1.16it/s, v_num=b6ej, train_loss=3.490, train_loss_ce=0.0798, train_acc_seg=96.90, train_loss_SAM=3.410, loss=3.490, max_grad=0.381, min_grad=0.00187,03/24 07:12:02 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/24 07:12:02 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.62it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.53 | 97.46 |
+|     UV     | 69.67 | 78.66 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 94: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.500, train_loss_ce=0.0984, train_acc_seg=96.00, train_loss_SAM=1.410, loss=1.500, max_grad=0.282, min_grad=0.00124,
+
+03/24 07:25:59 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.65it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.54 | 97.47 |
+|     UV     |  69.7 | 78.68 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 95: 100%|█| 33/33 [00:28<00:00,  1.16it/s, v_num=b6ej, train_loss=1.930, train_loss_ce=0.0419, train_acc_seg=98.30, train_loss_SAM=1.890, loss=1.930, max_grad=0.571, min_grad=0.00194,
+
+03/24 07:36:37 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.61it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.55 | 97.47 |
+|     UV     | 69.73 | 78.69 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 96: 100%|█| 33/33 [00:28<00:00,  1.15it/s, v_num=b6ej, train_loss=1.290, train_loss_ce=0.0347, train_acc_seg=98.60, train_loss_SAM=1.260, loss=1.290, max_grad=0.245, min_grad=0.00188,03/24 07:47:40 - mmengine - [97m[4mINFO[39m[24m - per class results:
+03/24 07:47:40 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:05<00:00,  1.67it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.56 | 97.48 |
+|     UV     | 69.77 | 78.72 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 97: 100%|█| 33/33 [00:29<00:00,  1.11it/s, v_num=b6ej, train_loss=2.570, train_loss_ce=0.0848, train_acc_seg=96.60, train_loss_SAM=2.490, loss=2.570, max_grad=0.437, min_grad=0.00319,
+
+
+03/24 07:59:12 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.56it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.56 | 97.48 |
+|     UV     |  69.8 | 78.74 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+Epoch 98: 100%|█| 33/33 [00:29<00:00,  1.13it/s, v_num=b6ej, train_loss=0.609, train_loss_ce=0.0274, train_acc_seg=98.80, train_loss_SAM=0.582, loss=0.609, max_grad=0.163, min_grad=0.00105,
+
+
+03/24 08:14:55 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.65it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.57 | 97.49 |
+|     UV     | 69.83 | 78.76 |
++------------+-------+-------+
+
+
+
+
+
+
+
+
+Epoch 99: 100%|█| 33/33 [00:29<00:00,  1.13it/s, v_num=b6ej, train_loss=1.110, train_loss_ce=0.049, train_acc_seg=98.00, train_loss_SAM=1.060, loss=1.110, max_grad=0.367, min_grad=0.00189,
+03/24 08:27:06 - mmengine - [97m[4mINFO[39m[24m - ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:06<00:00,  1.66it/s]
++------------+-------+-------+
+|   Class    |  IoU  |  Acc  |
++------------+-------+-------+
+| background | 93.58 | 97.49 |
+|     UV     | 69.86 | 78.77 |
++------------+-------+-------+
+
+Epoch 99: 100%|█| 33/33 [11:59<00:00, 21.80s/it, v_num=b6ej, train_loss=1.110, train_loss_ce=0.049, train_acc_seg=98.00, train_loss_SAM=1.060, loss=1.110, max_grad=0.367, min_grad=0.00189,
+`Trainer.fit` stopped: `max_epochs=100` reached.

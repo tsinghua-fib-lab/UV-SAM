@@ -34,7 +34,7 @@ def save_colored_mask(mask, save_path):
     lbl_pil.putpalette(colormap.flatten())
     lbl_pil.save(save_path)
 from glob import glob
-
+from tqdm import tqdm
 def find_contours(sub_mask):
     _, thresh = cv2.threshold(sub_mask, 0, 255, cv2.THRESH_BINARY)
 
@@ -88,9 +88,6 @@ def fill_hollow_area(mask):
         
             # Perform flood fill on the hollow area
             cv2.drawContours(mask, [contour], 0, 1, -1)
-
-
-    
     return mask
 def calculate_ac(true_positive, false_positive,false_negatives):
     precision = true_positive / (true_positive + false_positive)
@@ -107,7 +104,10 @@ def construct_sample(img, pipeline):
     pipeline = Compose(pipeline)
     sample = pipeline(inputs)
     return sample
-device = 'cuda:5' if torch.cuda.is_available() else 'cpu'
+
+
+
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 def build_model(cp, model_cfg):
     model_cpkt = torch.load(cp, map_location='cpu')
@@ -151,16 +151,17 @@ def cal_pr_f1(true_masks,pred_masks):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Train a detector')
-    parser.add_argument('--config', default="/configs/rsprompter/samseg_segformer_bbox_emb_MLP_SAMval_config.py",help='train config file path')
+    parser.add_argument('--config', default="./configs/SegSAMPLerEmbAdd_config.py",help='train config file path')
     parser.add_argument('--lr', type=float, default=0.0005)
     parser.add_argument('--wd', type=float, default=0.0001)    
-    parser.add_argument('--dilation_iter', type=int, default=8)
+    parser.add_argument('--SAM_weight', type=float, default=0.1)
+    parser.add_argument('--checkpoint_path', type=str, default=None)#put your model path here
     args = parser.parse_args()
 
 
 
-    checkpoint = '/checkpoints/xxxx/xxxx.ckpt'#put your model path here
-    cfg = Config.fromfile(args.cfg)
+    checkpoint = args.checkpoint_path
+    cfg = Config.fromfile(args.config)
 
     model = build_model(checkpoint, cfg.model_cfg)
 
@@ -170,111 +171,94 @@ if __name__ == "__main__":
     method=os.path.basename(args.config).split("/")[-1].split(".")[0]
 
 
-    gt_folder="/data/mask/test"
-
-
+    gt_folder="/data/mask/test/"
     im_folder="/data/image/test/"
 
-    if not os.path.exists("/results_inference/mask_outputs/"+method+"_"+str(args.lr)+"_"+str(args.wd)+"/"):
-        os.makedirs("/results_inference/mask_outputs/"+method+"_"+str(args.lr)+"_"+str(args.wd)+"/")
 
     model.eval()
     sam_iou=[]
-    mask_rcnn_iou=[]
     sam_precision=[]
     sam_recall=[]
     sam_f1=[]
-    seg_precision=[]
-    seg_recall=[]
-    seg_f1=[]
-    score_list=[]
-    for dilation_iter in range(4,6,4):
-        args.dilation_iter=dilation_iter
-        score_list.append(dilation_iter)
+
+    seg_root_dir="/results_inference/"+method+"_"+str(args.lr)+"_"+str(args.wd)+"_"+str(args.SAM_weight)+"/"
+    if not os.path.exists(seg_root_dir):
+        os.mkdir(seg_root_dir)
+        
+
+
+    
+    cnt_idx=0
+    SAM_bdata= np.zeros([len(os.listdir(im_folder)), 1024, 1024, 2]).astype(bool)
+
+
+    sam_tp=0
+    sam_fp=0
+    sam_fn=0
+
+    for im_file in tqdm(sorted(os.listdir(im_folder))):
+
+        im = mmcv.imread(os.path.join(im_folder, im_file))
+        sample = construct_sample(im, cfg.predict_pipeline)
+        sample['inputs'] = [sample['inputs']]
+        sample['data_samples'] = [sample['data_samples']]
 
 
 
-        seg_root_dir="/results_inference/"+method+"_"+str(args.lr)+"_"+str(args.wd)+"/"
-        if not os.path.exists(seg_root_dir):
-            os.mkdir(seg_root_dir)
+        
+        ground_truth = Image.open(gt_folder+im_file)
             
+        ground_truth = np.array(ground_truth)
+
+        height = im.shape[0]
+        width = im.shape[1]
+
+        one_image_mask=np.zeros((1024,1024),dtype=np.uint8)
+
+        with torch.no_grad():
+            outputs = model.predict_step(sample, batch_idx=0)
+        masks=np.array(outputs[0].pred_sem_seg.data.cpu().numpy(), dtype=np.uint8)
 
 
-        from tqdm import tqdm
-        cnt_idx=0
-        mask_rcnn_bdata= np.zeros([len(os.listdir(im_folder)), 1024, 1024, 2]).astype(bool)
-        SAM_bdata= np.zeros([len(os.listdir(im_folder)), 1024, 1024, 2]).astype(bool)
+        pred_masks =  masks.reshape(1024,1024)
+        pred_boxes=[]
+        pred_contours = find_contours(pred_masks)
 
-        seg_tp=0
-        seg_fp=0
-        seg_fn=0
-        sam_tp=0
-        sam_fp=0
-        sam_fn=0
+        one_image_mask=np.zeros((1024,1024),dtype=np.uint8)
 
-        for im_file in tqdm(sorted(os.listdir(im_folder))):
+        for idx,contour in enumerate(pred_contours):
+            contour_mask = np.zeros_like(pred_masks)
 
-            im = mmcv.imread(os.path.join(im_folder, im_file))
-            sample = construct_sample(im, cfg.predict_pipeline)
-            sample['inputs'] = [sample['inputs']]
-            sample['data_samples'] = [sample['data_samples']]
+            cv2.drawContours(contour_mask, [contour], 0, 255, thickness=cv2.FILLED)
 
+            contour_box=cv2.boundingRect(contour)
+            contour_box=[contour_box[0],contour_box[1],contour_box[0]+contour_box[2],contour_box[1]+contour_box[3]]
+            if abs(cv2.contourArea(contour)) > 100*100 and  contour_box[2]>100 and contour_box[3]>100:
+                mask = np.zeros((height, width), dtype=np.uint8)
+                one_image_mask+=cv2.drawContours(mask, pred_contours,idx, color=1, thickness=cv2.FILLED)
+                pred_boxes.append(contour_box)
+        one_image_mask[one_image_mask>1]=1
 
+        temp=cal_pr_f1(ground_truth,one_image_mask)      
+        sam_tp+=temp[0]
+        sam_fp+=temp[1]
+        sam_fn+=temp[2]
+        
 
-            
-            ground_truth = Image.open(gt_folder+im_file)
-                
-            ground_truth = np.array(ground_truth)
+        save_colored_mask(one_image_mask.reshape(1024,1024), seg_root_dir+im_file)
+        
+        sam_pred=one_image_mask.reshape(1024,1024).copy()
 
-            height = im.shape[0]
-            width = im.shape[1]
+        SAM_bdata[cnt_idx, :, :, 0] = ground_truth == 1
+        SAM_bdata[cnt_idx, :, :, 1] = sam_pred == 1 
 
-            one_image_mask=np.zeros((1024,1024),dtype=np.uint8)
-
-            with torch.no_grad():
-                outputs = model.predict_step(sample, batch_idx=0)
-            masks=np.array(outputs[0].pred_sem_seg.data.cpu().numpy(), dtype=np.uint8)
-
-
-            pred_masks =  masks.reshape(1024,1024)
-            pred_boxes=[]
-            pred_contours = find_contours(pred_masks)
-
-            one_image_mask=np.zeros((1024,1024),dtype=np.uint8)
-
-            for idx,contour in enumerate(pred_contours):
-                contour_mask = np.zeros_like(pred_masks)
-
-                cv2.drawContours(contour_mask, [contour], 0, 255, thickness=cv2.FILLED)
-
-                contour_box=cv2.boundingRect(contour)
-                contour_box=[contour_box[0],contour_box[1],contour_box[0]+contour_box[2],contour_box[1]+contour_box[3]]
-                if abs(cv2.contourArea(contour)) > 100*100 and  contour_box[2]>100 and contour_box[3]>100:
-                    mask = np.zeros((height, width), dtype=np.uint8)
-                    one_image_mask+=cv2.drawContours(mask, pred_contours,idx, color=1, thickness=cv2.FILLED)
-                    pred_boxes.append(contour_box)
-            one_image_mask[one_image_mask>1]=1
-
-            temp=cal_pr_f1(ground_truth,one_image_mask)      
-            seg_tp+=temp[0]
-            seg_fp+=temp[1]
-            seg_fn+=temp[2]
-            
-
-            save_colored_mask(one_image_mask.reshape(1024,1024), seg_root_dir+im_file)
-            
-            mask_rcnn_pred=one_image_mask.reshape(1024,1024).copy()
-
-            mask_rcnn_bdata[cnt_idx, :, :, 0] = ground_truth == 1
-            mask_rcnn_bdata[cnt_idx, :, :, 1] = mask_rcnn_pred == 1 
-
-            cnt_idx+=1
-        mask_rcnn_iou.append(np.sum(mask_rcnn_bdata[..., 0] & mask_rcnn_bdata[..., 1])/np.sum(mask_rcnn_bdata[..., 0] | mask_rcnn_bdata[..., 1])) #计算IOU
-        temp=calculate_ac(seg_tp,seg_fp,seg_fn)
-        seg_precision.append(temp[0])
-        seg_recall.append(temp[1])
-        seg_f1.append(temp[2])
-        print("seg_iou:",mask_rcnn_iou)
+        cnt_idx+=1
+    sam_iou.append(np.sum(SAM_bdata[..., 0] & SAM_bdata[..., 1])/np.sum(SAM_bdata[..., 0] | SAM_bdata[..., 1])) #计算IOU
+    temp=calculate_ac(sam_tp,sam_fp,sam_fn)
+    sam_precision.append(temp[0])
+    sam_recall.append(temp[1])
+    sam_f1.append(temp[2])
+    print("seg_iou:",sam_iou)
 
 
 
@@ -282,19 +266,18 @@ import csv
 
 
 final_list=[]
-final_list.append(score_list)
 
-final_list.append(mask_rcnn_iou)
-final_list.append(seg_precision)
+final_list.append(sam_iou)
+final_list.append(sam_f1)
 
-final_list.append(seg_recall)
-final_list.append(seg_f1)
+final_list.append(sam_recall)
+final_list.append(sam_precision)
 
 
 if not os.path.exists("/results_inference/"):
     os.makedirs("/results_inference/")
 
-with open("/results_inference/"+method+"_"+str(args.lr)+"_"+str(args.wd)+".csv", 'w') as cf:
+with open("/results_inference/"+method+"_"+str(args.lr)+"_"+str(args.wd)+"_"+str(args.SAM_weight)+".csv", 'w') as cf:
     csvfile = csv.writer(cf, delimiter=',')
     for column in zip(*[i for i in final_list]):
         csvfile.writerow(column)

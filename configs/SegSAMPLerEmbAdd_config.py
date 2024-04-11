@@ -129,7 +129,7 @@ logger = dict(
     type='WandbLogger',
     project="UV-SAM",
     group='SAM',
-    name=exp_name
+    save_dir=f'results/{exp_name}/logs',
 )
 
 
